@@ -915,6 +915,56 @@ body.old-layout { margin: 0; background: #fff; }
 }
 .home-outer .story-card.story-hidden { display: none; }
 
+/* -------- Home page quote grid (old-site) -------- */
+.home-outer .quote-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 26px;
+  padding: 0 40px;
+  max-width: 1100px;
+  margin: 40px auto 90px;
+}
+.home-outer .quote-card {
+  background: #fafafa;
+  border: 1px solid rgba(0,0,0,0.07);
+  border-radius: 14px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 190px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.home-outer .quote-card:hover { transform: translateY(-4px); box-shadow: 0 14px 30px -12px rgba(0,0,0,0.12); }
+.home-outer .quote-number {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #bbb;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+.home-outer .quote-text {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #222;
+  margin-bottom: 18px;
+}
+.home-outer .quote-source {
+  font-size: 0.78rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #888;
+  text-decoration: none;
+  font-weight: 600;
+  align-self: flex-start;
+  transition: color 0.2s ease;
+}
+.home-outer .quote-source::before { content: "— "; }
+.home-outer .quote-source:hover { color: #111; }
+
 /* -------- Short stories grid (old-site) -------- */
 .home-outer .story-grid {
   display: grid;
@@ -1165,4 +1215,5 @@ body.old-layout { margin: 0; background: #fff; }
   .home-outer .os-book-grid { grid-template-columns: 1fr; }
   .home-outer .story-grid { grid-template-columns: 1fr; }
   .home-outer .story-card { padding: 24px; }
+  .home-outer .quote-grid { grid-template-columns: 1fr; padding: 0 20px; }
 }
