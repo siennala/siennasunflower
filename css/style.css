@@ -896,7 +896,7 @@ body.old-layout.book-detail-dark .home-outer {
   border: none;
   box-shadow: none;
   transform: none;
-  object-position: center 35%;
+  object-position: center top;
   object-fit: cover;
   z-index: 0;
 }
@@ -1025,6 +1025,34 @@ body.old-layout.book-detail-dark .home-outer {
 }
 .home-outer .book-back-link:hover { color: #111; }
 /* -------- Book detail page: full cover reveal -------- */
+.home-outer .book-cover-gallery.mala-henry-theme {
+  background: #fdf6ec;
+  padding: 10px 40px 70px;
+}
+.home-outer .book-cover-gallery.mala-henry-theme .book-cover-gallery-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.home-outer .book-cover-gallery.mala-henry-theme img {
+  max-width: 100%;
+  width: 640px;
+  border-radius: 16px;
+  box-shadow: 0 12px 28px rgba(77,104,54,0.15);
+}
+@media (max-width: 800px) {
+  .home-outer .book-cover-gallery.mala-henry-theme {
+    padding: 10px 20px 50px;
+  }
+  .home-outer .book-cover-gallery.mala-henry-theme img {
+    width: 100%;
+    max-width: 420px;
+  }
+}
 /* -------- Short stories filter bar -------- */
 .home-outer .story-filter-bar {
   display: flex;
