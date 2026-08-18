@@ -10,7 +10,7 @@
 <link rel="stylesheet" href="css/style.css" />
 <link rel="icon" type="image/png" href="Images/The Four Gods of Hali element.png">
 </head>
-<body class="old-layout">
+<body class="old-layout book-detail-dark">
 
 <div class="home-outer">
 
@@ -25,8 +25,17 @@
     </nav>
   </div>
 
-  <!-- INTRO -->
-  <div class="os-title" style="margin-top: 60px;">Short Stories</div>
+  <!-- HERO: IMAGE FADING INTO BLACK, TITLE OVERLAID -->
+  <div class="book-bg-hero stories-hero" style="min-height: 55vh;">
+    <img src="Images/Sunset Smoke illustration.png" alt="Illustration from Sunset Smoke" style="object-fit: cover; object-position: center 45%;">
+    <div class="book-bg-hero-content">
+      <h1 class="book-detail-title">Short Stories</h1>
+    </div>
+  </div>
+
+  <!-- SHORT STORIES SECTION: sits on black, continues the hero's fade -->
+  <div class="book-detail-body on-black">
+  <div class="book-detail-body-inner wide">
 
   <!-- FILTERS -->
   <div class="story-filter-bar">
@@ -144,7 +153,7 @@
   </div>
 
   <!-- FAIRY TALE COLLECTION -->
-  <div class="os-title" id="fairyTaleHeading" style="margin-top: 60px; font-size: 1.4rem;">Fairy Tale Collection</div>
+  <div class="os-title" id="fairyTaleHeading" style="margin-top: 60px; font-size: 1.4rem; text-align: left; max-width: 900px; margin-left: auto; margin-right: auto; padding: 0 40px;">Fairy Tale Collection</div>
 
   <div class="story-grid" id="storyGridFairy">
 
@@ -177,8 +186,11 @@
 
   </div>
 
+  </div>
+  </div>
+
   <!-- FOOTER -->
-  <div class="site-copy-footer">
+  <div class="site-copy-footer on-black">
     Once upon a time, there was a girl dreaming of being a writer.<br>
     Working on spending more time writing and less time daydreaming.<br>
     © 2026 Sienna Sunflower.
