@@ -896,7 +896,7 @@ body.old-layout.book-detail-dark .home-outer {
   border: none;
   box-shadow: none;
   transform: none;
-  object-position: center top;
+  object-position: center 15%;
   object-fit: cover;
   z-index: 0;
 }
