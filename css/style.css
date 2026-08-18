@@ -843,6 +843,25 @@ body.old-layout.book-detail-dark .home-outer {
   object-position: center;
   z-index: 0;
 }
+.home-outer .book-bg-hero-split {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  z-index: 0;
+}
+.home-outer .book-bg-hero-split .book-bg-hero-half {
+  position: relative;
+  flex: 1 1 50%;
+  overflow: hidden;
+}
+.home-outer .book-bg-hero-split .book-bg-hero-half img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
 .home-outer .book-bg-hero::after {
   content: "";
   position: absolute;
