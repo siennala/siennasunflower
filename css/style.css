@@ -826,6 +826,108 @@ body.old-layout.book-detail-dark .home-outer {
 /* -------- Footer credit (old-site) -------- */
 .home-outer .os-site-footer { text-align: center; padding: 40px 20px 60px; font-size: 0.9rem; color: #777; letter-spacing: 0.02em; }
 
+/* -------- Shelf-style book grid (books page redesign) -------- */
+.home-outer .shelf-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 56px 44px;
+  max-width: 1400px;
+  margin: 20px auto 100px;
+  padding: 0 40px;
+}
+.home-outer .shelf-grid--single { grid-template-columns: repeat(3, 1fr); }
+
+.home-outer .shelf-card {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.home-outer .shelf-card-cover {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: 0 14px 32px rgba(0,0,0,0.45);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.home-outer .shelf-card:hover .shelf-card-cover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 46px rgba(0,0,0,0.6);
+}
+.home-outer .shelf-card-cover img {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 5 / 8;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.home-outer .shelf-card:hover .shelf-card-cover img { transform: scale(1.03); }
+
+.home-outer .shelf-card-body {
+  padding: 22px 4px 0;
+}
+.home-outer .shelf-card-title {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: #fff;
+  margin: 0 0 6px;
+  line-height: 1.25;
+  transition: color 0.2s ease;
+}
+.home-outer .shelf-card:hover .shelf-card-title { color: #ffd9a8; }
+
+.home-outer .shelf-card-meta {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 14px;
+}
+.home-outer .shelf-card-blurb {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.78);
+  margin: 0 0 18px;
+}
+.home-outer .shelf-card-link {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+  padding-bottom: 2px;
+  transition: color 0.2s ease, border-color 0.2s ease;
+}
+.home-outer .shelf-card-link:hover {
+  color: #ffd9a8;
+  border-bottom-color: #ffd9a8;
+}
+
+/* Shelf grid: 2 columns on tablet */
+@media (max-width: 980px) {
+  .home-outer .shelf-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px 32px;
+  }
+}
+
+/* Shelf grid: 1 column on mobile */
+@media (max-width: 600px) {
+  .home-outer .shelf-grid {
+    grid-template-columns: 1fr;
+    gap: 48px;
+    padding: 0 24px;
+  }
+  .home-outer .shelf-card-title { font-size: 1.25rem; }
+}
+
 /* -------- Book detail page v6: full-page background image hero -------- */
 .home-outer .book-bg-hero {
   position: relative;
@@ -868,6 +970,49 @@ body.old-layout.book-detail-dark .home-outer {
   inset: 0;
   background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0.1) 65%, rgba(0,0,0,0) 85%);
   z-index: 1;
+}
+
+/* -------- Book/story hero: centered square image on a plain white background --------
+   Matches the home page hero vibe: white backdrop, square art sits on it,
+   title sits below in dark text. Image is fully visible (no crop). */
+.home-outer .book-bg-hero.hero-square {
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: #ffffff;
+  padding: 7vh 20px 40px;
+}
+.home-outer .book-bg-hero.hero-square img {
+  position: relative;
+  inset: auto;
+  width: auto;
+  height: auto;
+  max-width: min(520px, 78vw);
+  max-height: 62vh;
+  object-fit: contain;
+  z-index: 0;
+}
+/* No gradient overlay on the white hero — the image's own white background
+   is enough. Hide the ::after pseudo so it doesn't paint anything. */
+.home-outer .book-bg-hero.hero-square::after { display: none; }
+.home-outer .book-bg-hero.hero-square .book-bg-hero-content {
+  position: relative;
+  margin-top: 24px;
+  text-align: center;
+  padding: 0 40px;
+}
+/* Dark title text on the white hero (overrides the default white title). */
+.home-outer .book-bg-hero.hero-square .book-detail-title {
+  color: #111;
+  text-shadow: none;
+}
+.home-outer .book-bg-hero.hero-square .book-detail-meta {
+  color: rgba(0,0,0,0.65);
+}
+/* Stories hero with the square image still centers its title (override the
+   left-aligned stories-hero content rule). */
+.home-outer .book-bg-hero.hero-square.stories-hero .book-bg-hero-content {
+  text-align: center;
 }
 .home-outer .book-bg-hero.mala-henry-theme {
   position: relative;
@@ -1583,6 +1728,8 @@ body.old-layout.book-detail-dark .home-outer {
   .home-outer .story-filter-bar { padding: 0 20px; gap: 14px; }
   .home-outer .story-filter-reset { align-self: flex-start; }
   .home-outer .book-bg-hero { min-height: 70vh; }
+  .home-outer .book-bg-hero.hero-square { min-height: 70vh; padding: 24px 16px; }
+  .home-outer .book-bg-hero.hero-square img { max-height: 56vh; }
 }
 
 @media (max-width: 600px) {
