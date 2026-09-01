@@ -971,49 +971,6 @@ body.old-layout.book-detail-dark .home-outer {
   background: linear-gradient(to top, rgba(0,0,0,1) 0%, rgba(0,0,0,0.5) 30%, rgba(0,0,0,0.1) 65%, rgba(0,0,0,0) 85%);
   z-index: 1;
 }
-
-/* -------- Book/story hero: centered square image on a plain white background --------
-   Matches the home page hero vibe: white backdrop, square art sits on it,
-   title sits below in dark text. Image is fully visible (no crop). */
-.home-outer .book-bg-hero.hero-square {
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  background: #ffffff;
-  padding: 7vh 20px 40px;
-}
-.home-outer .book-bg-hero.hero-square img {
-  position: relative;
-  inset: auto;
-  width: auto;
-  height: auto;
-  max-width: min(520px, 78vw);
-  max-height: 62vh;
-  object-fit: contain;
-  z-index: 0;
-}
-/* No gradient overlay on the white hero — the image's own white background
-   is enough. Hide the ::after pseudo so it doesn't paint anything. */
-.home-outer .book-bg-hero.hero-square::after { display: none; }
-.home-outer .book-bg-hero.hero-square .book-bg-hero-content {
-  position: relative;
-  margin-top: 24px;
-  text-align: center;
-  padding: 0 40px;
-}
-/* Dark title text on the white hero (overrides the default white title). */
-.home-outer .book-bg-hero.hero-square .book-detail-title {
-  color: #111;
-  text-shadow: none;
-}
-.home-outer .book-bg-hero.hero-square .book-detail-meta {
-  color: rgba(0,0,0,0.65);
-}
-/* Stories hero with the square image still centers its title (override the
-   left-aligned stories-hero content rule). */
-.home-outer .book-bg-hero.hero-square.stories-hero .book-bg-hero-content {
-  text-align: center;
-}
 .home-outer .book-bg-hero.mala-henry-theme {
   position: relative;
   display: flex;
@@ -1125,31 +1082,6 @@ body.old-layout.book-detail-dark .home-outer {
    individual book detail pages (which have a dark hero already).
    Padding-top on the inner pushes the cards below the gradient zone so
    the cover tops don't get a white tint. */
-.home-outer:has(.book-bg-hero.hero-square) .book-detail-body.on-black::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 260px;
-  /* Gentle, watercolor-style dissolve: holds near-white for a stretch,
-     then eases out slowly to fully transparent. */
-  background: linear-gradient(
-    to bottom,
-    rgba(255,255,255,0.95) 0%,
-    rgba(255,255,255,0.85) 18%,
-    rgba(255,255,255,0.55) 45%,
-    rgba(255,255,255,0.22) 70%,
-    rgba(255,255,255,0) 100%
-  );
-  pointer-events: none;
-  z-index: 1;
-}
-.home-outer:has(.book-bg-hero.hero-square) .book-detail-body.on-black .book-detail-body-inner {
-  position: relative;
-  z-index: 2;
-  padding: 280px 40px 70px;
-}
 .home-outer .book-detail-body.on-black .book-detail-body-inner {
   max-width: 760px;
   margin: 0 auto;
@@ -1759,8 +1691,6 @@ body.old-layout.book-detail-dark .home-outer {
   .home-outer .story-filter-bar { padding: 0 20px; gap: 14px; }
   .home-outer .story-filter-reset { align-self: flex-start; }
   .home-outer .book-bg-hero { min-height: 70vh; }
-  .home-outer .book-bg-hero.hero-square { min-height: 70vh; padding: 24px 16px; }
-  .home-outer .book-bg-hero.hero-square img { max-height: 56vh; }
 }
 
 @media (max-width: 600px) {
