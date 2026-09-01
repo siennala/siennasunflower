@@ -1114,10 +1114,32 @@ body.old-layout.book-detail-dark .home-outer {
 .home-outer .book-bg-hero-content .book-detail-actions { text-align: center; padding: 0; }
 /* -------- Book detail page: description block on black -------- */
 .home-outer .book-detail-body.on-black {
+  position: relative;
   background: #000;
   max-width: 100%;
   padding-top: 0;
   margin-top: -1px;
+}
+/* Soft white-to-black fade at the top of the books/stories landing pages,
+   where the white hero meets the black book/story grid. Skipped on
+   individual book detail pages (which have a dark hero already).
+   Padding-top on the inner pushes the cards below the gradient zone so
+   the cover tops don't get a white tint. */
+.home-outer:has(.book-bg-hero.hero-square) .book-detail-body.on-black::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 140px;
+  background: linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+.home-outer:has(.book-bg-hero.hero-square) .book-detail-body.on-black .book-detail-body-inner {
+  position: relative;
+  z-index: 2;
+  padding: 160px 40px 70px;
 }
 .home-outer .book-detail-body.on-black .book-detail-body-inner {
   max-width: 760px;
