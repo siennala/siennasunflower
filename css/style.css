@@ -1131,15 +1131,24 @@ body.old-layout.book-detail-dark .home-outer {
   top: 0;
   left: 0;
   right: 0;
-  height: 140px;
-  background: linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0) 100%);
+  height: 260px;
+  /* Gentle, watercolor-style dissolve: holds near-white for a stretch,
+     then eases out slowly to fully transparent. */
+  background: linear-gradient(
+    to bottom,
+    rgba(255,255,255,0.95) 0%,
+    rgba(255,255,255,0.85) 18%,
+    rgba(255,255,255,0.55) 45%,
+    rgba(255,255,255,0.22) 70%,
+    rgba(255,255,255,0) 100%
+  );
   pointer-events: none;
   z-index: 1;
 }
 .home-outer:has(.book-bg-hero.hero-square) .book-detail-body.on-black .book-detail-body-inner {
   position: relative;
   z-index: 2;
-  padding: 160px 40px 70px;
+  padding: 280px 40px 70px;
 }
 .home-outer .book-detail-body.on-black .book-detail-body-inner {
   max-width: 760px;
