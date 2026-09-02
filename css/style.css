@@ -876,7 +876,7 @@ body.old-layout.book-detail-dark .home-outer {
   line-height: 1.25;
   transition: color 0.2s ease;
 }
-.home-outer .shelf-card:hover .shelf-card-title { color: #ffd9a8; }
+.home-outer .shelf-card:hover .shelf-card-title { color: #ffffff; }
 
 .home-outer .shelf-card-meta {
   font-family: var(--font-body);
@@ -906,8 +906,8 @@ body.old-layout.book-detail-dark .home-outer {
   transition: color 0.2s ease, border-color 0.2s ease;
 }
 .home-outer .shelf-card-link:hover {
-  color: #ffd9a8;
-  border-bottom-color: #ffd9a8;
+  color: #ffffff;
+  border-bottom-color: #ffffff;
 }
 
 /* Shelf grid: 2 columns on tablet */
